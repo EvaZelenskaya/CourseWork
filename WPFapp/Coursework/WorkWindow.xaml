@@ -1,0 +1,32 @@
+﻿<Window x:Class="Coursework.WorkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coursework"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Обмен валют" Height="800" Width="1100">
+    <Grid Background="#17252A">
+        <Border MinWidth="1000" MinHeight="500" Margin="15"  Background="#2B7A78" VerticalAlignment="Center" Padding="30" MaxWidth="550" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="#FEFFFF" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <Label Content="Выберите тип операции"></Label>
+                <RadioButton Content="Покупка"></RadioButton>
+                <RadioButton Content="Продажа"></RadioButton>
+                <RadioButton Content="Обмен"></RadioButton>
+                 <ComboBox x:Name="Function"  HorizontalAlignment="Stretch" Width="500" Margin="10 10 0 15 " Background="#DEF2F1"></ComboBox>
+                <ComboBox x:Name="efd" HorizontalAlignment="Left" Width="250" Margin="10  0 10 15 " Background="#DEF2F1" ></ComboBox>
+                <ComboBox x:Name="Clvdvt" HorizontalAlignment="Right" Width="250" Background="#DEF2F1"></ComboBox>
+                <TextBox x:Name="ValIz" Background="#FEFFFF" HorizontalAlignment="Left" MinHeight="150" MinWidth="350"></TextBox>
+                <TextBox x:Name="ValV" Background="#FEFFFF" HorizontalAlignment="Right" MinHeight="150" MinWidth="350"></TextBox>
+                <Grid Margin="0 0 0 20">
+                    <Button HorizontalAlignment="Right" Margin="10 10 4 20" Content="Окей" Style="{StaticResource MaterialDesignFlatButton}" ></Button>
+                </Grid>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

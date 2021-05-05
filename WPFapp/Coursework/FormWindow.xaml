@@ -1,0 +1,34 @@
+﻿<Window x:Class="Coursework.FormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coursework"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Регистрация клиента" Height="750" Width="1000">
+    <Grid Background="#17252A">
+        <Border MinWidth="800" Margin="15"  Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightBlue" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Заполните форму анкеты" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 20" Foreground="#FF17252A" />
+                <TextBox materialDesign:HintAssist.Hint="Фамилия" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  />
+                <TextBox materialDesign:HintAssist.Hint="Имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox materialDesign:HintAssist.Hint="Отчество" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox materialDesign:HintAssist.Hint="Адрес проживания" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox materialDesign:HintAssist.Hint="Гражданство" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox materialDesign:HintAssist.Hint="ИНН" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox materialDesign:HintAssist.Hint="Место работы" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox materialDesign:HintAssist.Hint="Телефонный номер" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                
+                
+                <Grid Margin="0 0 0 20">
+                    <Button HorizontalAlignment="Right" Margin="0 20" Content="Продолжить" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FF3AAFA9" FontSize="16"></Button>
+                </Grid>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
