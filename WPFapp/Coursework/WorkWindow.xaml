@@ -3,30 +3,64 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Coursework"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Обмен валют" Height="800" Width="1100">
-    <Grid Background="#17252A">
-        <Border MinWidth="1000" MinHeight="500" Margin="15"  Background="#2B7A78" VerticalAlignment="Center" Padding="30" MaxWidth="550" >
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="30" Color="#FEFFFF" ShadowDepth="0"></DropShadowEffect>
-            </Border.Effect>
-            <StackPanel>
-                <Label Content="Выберите тип операции"></Label>
-                <RadioButton Content="Покупка"></RadioButton>
-                <RadioButton Content="Продажа"></RadioButton>
-                <RadioButton Content="Обмен"></RadioButton>
-                 <ComboBox x:Name="Function"  HorizontalAlignment="Stretch" Width="500" Margin="10 10 0 15 " Background="#DEF2F1"></ComboBox>
-                <ComboBox x:Name="efd" HorizontalAlignment="Left" Width="250" Margin="10  0 10 15 " Background="#DEF2F1" ></ComboBox>
-                <ComboBox x:Name="Clvdvt" HorizontalAlignment="Right" Width="250" Background="#DEF2F1"></ComboBox>
-                <TextBox x:Name="ValIz" Background="#FEFFFF" HorizontalAlignment="Left" MinHeight="150" MinWidth="350"></TextBox>
-                <TextBox x:Name="ValV" Background="#FEFFFF" HorizontalAlignment="Right" MinHeight="150" MinWidth="350"></TextBox>
-                <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Right" Margin="10 10 4 20" Content="Окей" Style="{StaticResource MaterialDesignFlatButton}" ></Button>
-                </Grid>
+        Title="Обмен валют" Height="1000" Width="1000" MinHeight="530" MinWidth="1000" Background="#F5E6CC">
+    <Grid Background="#A64AC9" VerticalAlignment="Top"  HorizontalAlignment="Center" ShowGridLines="False" Width="1000" Height="1000" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Label x:Name="Label1п" Margin="20 0 0 0" Content="Личный кабинет: Петров В. А." Grid.Column="0"  Grid.Row="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold"  />
+        <Label x:Name="Lab" Margin="20 50 0 0" Content="Клиент: Васильев В. А." Grid.Column="0"  Grid.Row="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold"   />
+        <Label x:Name="lblTime" Grid.Column="1"  Grid.Row="0" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Style="{StaticResource MaterialDesignLabel}"/>
+        <DatePicker Grid.Row="0"  Grid.Column="2"
+    HorizontalAlignment="Right" FontSize="16"
+                    VerticalAlignment="Top"
+    SelectedDate="{Binding
+        Path=AvailableFrom,
+        Mode=TwoWay,
+        TargetNullValue={x:Static System:DateTime.Now}}"
+    Margin="0 30  30 0" Style="{StaticResource MaterialDesignDatePicker }"/>
 
-            </StackPanel>
-        </Border>
+        <Label x:Name="Label" Margin="20 0 0 0" Content="Выберите тип операции:" Grid.Column="0"  Grid.Row="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White"  />
+        <RadioButton x:Name="Cnopka1" Content="покупка валюты у клиента" Foreground="White" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  FontSize="16" />
+        <RadioButton x:Name="Cnopka2" Content="продажа валюты клиенту" Foreground="White" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" FontSize="16" />
+        <ComboBox   Margin="20 0 0 0" Grid.Row="2" Grid.Column="0" Background="White"  VerticalAlignment="Center" FontSize="12" Height="23" >
+            <ComboBoxItem>Доллар США $</ComboBoxItem>
+            <ComboBoxItem>Евро €</ComboBoxItem>
+            <ComboBoxItem>Белорусский рубль Br</ComboBoxItem>
+            <ComboBoxItem>Украинская гривна ₴</ComboBoxItem>
+            <ComboBoxItem>Фунт стерлингов £</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Российский рубль ₽</ComboBoxItem>
+        </ComboBox>
+
+
+        <ComboBox   Margin="0 0 20 0" Grid.Row="2" Grid.Column="2" Background="White" VerticalAlignment="Center" FontSize="12" Height="23" >
+            <ComboBoxItem>Доллар США $</ComboBoxItem>
+            <ComboBoxItem>Евро €</ComboBoxItem>
+            <ComboBoxItem>Белорусский рубль Br</ComboBoxItem>
+            <ComboBoxItem>Украинская гривна ₴</ComboBoxItem>
+            <ComboBoxItem>Фунт стерлингов £</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Российский рубль ₽</ComboBoxItem>
+        </ComboBox>
+        <TextBox  Margin="20 0 0 0"  Grid.Row="3" Grid.Column="0" Background="White"  VerticalAlignment="Top" Height="200"/>
+        <ListBox  Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" FontSize="12" Height="108" >
+            <Image  Height="98" Width="341" Source="стр1.png"></Image>
+
+        </ListBox>
+        <TextBox   Margin="0 0 20 0" Grid.Row="3" Grid.Column="2"  VerticalAlignment="Top" Background="White" Height="200" />
+        <Button Grid.Row="4"  Grid.Column="2" VerticalAlignment="Bottom" FontSize="20" HorizontalAlignment="Right" Margin="0 20 30 0"  Content="Оформить чек"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="Black"/>
     </Grid>
+
 </Window>

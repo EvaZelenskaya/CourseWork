@@ -22,3 +22,9 @@ C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\obj\Debug\Coursework.
 C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\obj\Debug\Coursework.pdb
 C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\obj\Debug\FormWindow.g.cs
 C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\obj\Debug\FormWindow.baml
+C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\obj\Debug\WorkWindow.g.cs
+C:\Users\lenovo\Desktop\GIT\Курсач\WPFapp\Coursework\obj\Debug\WorkWindow.baml

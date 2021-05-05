@@ -7,13 +7,13 @@
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Регистрация клиента" Height="750" Width="1000">
-    <Grid Background="#17252A">
+    <Grid Background="#17E9E0">
         <Border MinWidth="800" Margin="15"  Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="30" Color="LightBlue" ShadowDepth="0"></DropShadowEffect>
+                <DropShadowEffect BlurRadius="30" Color="White" ShadowDepth="0"></DropShadowEffect>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Заполните форму анкеты" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 20" Foreground="#FF17252A" />
+                <TextBlock Text="Заполните форму анкеты" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 20" Foreground="#17E9E0" />
                 <TextBox materialDesign:HintAssist.Hint="Фамилия" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  />
                 <TextBox materialDesign:HintAssist.Hint="Имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <TextBox materialDesign:HintAssist.Hint="Отчество" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
@@ -25,7 +25,7 @@
                 
                 
                 <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Right" Margin="0 20" Content="Продолжить" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FF3AAFA9" FontSize="16"></Button>
+                    <Button HorizontalAlignment="Right" Margin="0 20" Content="Продолжить" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FCCD04" FontSize="16"></Button>
                 </Grid>
 
             </StackPanel>
