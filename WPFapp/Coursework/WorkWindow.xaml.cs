@@ -29,10 +29,12 @@ namespace Coursework
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
             timer.Start();
+            lblDate.Content = DateTime.Today.ToShortDateString();
         }
         void timer_Tick(object sender, EventArgs e)
         {
             lblTime.Content = DateTime.Now.ToLongTimeString();
+            
         }
     }
 }

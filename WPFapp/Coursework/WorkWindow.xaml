@@ -4,63 +4,72 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Coursework"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Обмен валют" Height="1000" Width="1000" MinHeight="530" MinWidth="1000" Background="#F5E6CC">
-    <Grid Background="#A64AC9" VerticalAlignment="Top"  HorizontalAlignment="Center" ShowGridLines="False" Width="1000" Height="1000" >
+        Title="Обмен валют"  Width="700" MinHeight="440" MinWidth="700" Height="440" Background="#2C2F3D">
+    <Grid Background="#2C2F3D" VerticalAlignment="Top"  HorizontalAlignment="Center" ShowGridLines="False" MinWidth="700" MinHeight="440" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="300"/>
+            
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <Label x:Name="Label1п" Margin="20 0 0 0" Content="Личный кабинет: Петров В. А." Grid.Column="0"  Grid.Row="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold"  />
-        <Label x:Name="Lab" Margin="20 50 0 0" Content="Клиент: Васильев В. А." Grid.Column="0"  Grid.Row="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold"   />
-        <Label x:Name="lblTime" Grid.Column="1"  Grid.Row="0" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Style="{StaticResource MaterialDesignLabel}"/>
-        <DatePicker Grid.Row="0"  Grid.Column="2"
-    HorizontalAlignment="Right" FontSize="16"
-                    VerticalAlignment="Top"
-    SelectedDate="{Binding
-        Path=AvailableFrom,
-        Mode=TwoWay,
-        TargetNullValue={x:Static System:DateTime.Now}}"
-    Margin="0 30  30 0" Style="{StaticResource MaterialDesignDatePicker }"/>
 
-        <Label x:Name="Label" Margin="20 0 0 0" Content="Выберите тип операции:" Grid.Column="0"  Grid.Row="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White"  />
-        <RadioButton x:Name="Cnopka1" Content="покупка валюты у клиента" Foreground="White" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  FontSize="16" />
-        <RadioButton x:Name="Cnopka2" Content="продажа валюты клиенту" Foreground="White" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" FontSize="16" />
-        <ComboBox   Margin="20 0 0 0" Grid.Row="2" Grid.Column="0" Background="White"  VerticalAlignment="Center" FontSize="12" Height="23" >
+        <Label x:Name="lblLK" Margin="0,20,0,0" Content="Личный кабинет: Петров В. А." Grid.Column="2"  Grid.Row="0" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Top"  Foreground="White" FontWeight="Bold"   />
+        <Label x:Name="lblTime"  Grid.Column="1"  Grid.Row="0" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF8D0A" Style="{StaticResource MaterialDesignLabel}"/>
+        <Label x:Name="lblDate" Grid.Column="1"  Grid.Row="0" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="#FF8D0A" Style="{StaticResource MaterialDesignLabel}" />
+
+
+        <Label x:Name="lblCurrency" Margin="20,10,0,10.4" Content="Валюта:" Grid.Column="0"  Grid.Row="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White"  />
+        <ComboBox x:Name="comBox_Currency"  Margin="21,14,299.4,13.4" Grid.Row="1" Grid.Column="1" Background="White"  VerticalAlignment="Center" FontSize="12" Height="23" Grid.ColumnSpan="2" >
             <ComboBoxItem>Доллар США $</ComboBoxItem>
             <ComboBoxItem>Евро €</ComboBoxItem>
-            <ComboBoxItem>Белорусский рубль Br</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Белорусский рубль Br</ComboBoxItem>
             <ComboBoxItem>Украинская гривна ₴</ComboBoxItem>
             <ComboBoxItem>Фунт стерлингов £</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">Российский рубль ₽</ComboBoxItem>
+            <ComboBoxItem >Российский рубль ₽</ComboBoxItem>
         </ComboBox>
+        <Label x:Name="lblConversion_1" Margin="20.6,10,0,10.4" Content="Курс(покуп.):" Grid.Column="2"  Grid.Row="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White" />
+        <Label  x:Name="lbl_buy_Now_currently" Grid.Row="1"  Grid.Column="2"  FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="White">187,85</Label>
 
 
-        <ComboBox   Margin="0 0 20 0" Grid.Row="2" Grid.Column="2" Background="White" VerticalAlignment="Center" FontSize="12" Height="23" >
-            <ComboBoxItem>Доллар США $</ComboBoxItem>
-            <ComboBoxItem>Евро €</ComboBoxItem>
-            <ComboBoxItem>Белорусский рубль Br</ComboBoxItem>
-            <ComboBoxItem>Украинская гривна ₴</ComboBoxItem>
-            <ComboBoxItem>Фунт стерлингов £</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">Российский рубль ₽</ComboBoxItem>
+        <Label x:Name="lblMath_Operating" Margin="20,10.6,0,10.8" Content="Вид операции:" Grid.Column="0"  Grid.Row="2" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White"  />
+        <ComboBox x:Name="comBox_Operations"  Margin="21,13.6,299.4,13.8" Grid.Row="2" Grid.Column="1" Background="White"  VerticalAlignment="Center" FontSize="12" Height="23" Grid.ColumnSpan="2" >
+            <ComboBoxItem>Купить</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Продать</ComboBoxItem>
         </ComboBox>
-        <TextBox  Margin="20 0 0 0"  Grid.Row="3" Grid.Column="0" Background="White"  VerticalAlignment="Top" Height="200"/>
-        <ListBox  Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" FontSize="12" Height="108" >
-            <Image  Height="98" Width="341" Source="стр1.png"></Image>
+        <Label x:Name="lblConversion_2" Margin="20.6,10.6,0,10.8" Content="Курс(прод.):" Grid.Column="2"  Grid.Row="2" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White" />
+        <Label  x:Name="lbl_sell_Now_currently" Grid.Row="2"  Grid.Column="2"  FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="White">189,00</Label>
 
-        </ListBox>
-        <TextBox   Margin="0 0 20 0" Grid.Row="3" Grid.Column="2"  VerticalAlignment="Top" Background="White" Height="200" />
-        <Button Grid.Row="4"  Grid.Column="2" VerticalAlignment="Bottom" FontSize="20" HorizontalAlignment="Right" Margin="0 20 30 0"  Content="Оформить чек"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="Black"/>
+
+        <Label x:Name="lblSum_Currency" Margin="20,10.2,0,10.2" Content="Сумма в валюте:" Grid.Column="0"  Grid.Row="3" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White"  />
+        <TextBox x:Name="sum_currency"  Margin="21,13.2,298.4,13.2" Grid.Row="3" Grid.Column="1" Background="White"  VerticalAlignment="Center" FontSize="12" Height="24" Grid.ColumnSpan="2" >
+        </TextBox>
+        <Label x:Name="lblAvtoSum" Margin="20.6,10.2,0,10.2" Content="Сумма:" Grid.Column="2"  Grid.Row="3" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White" />
+        <Label  x:Name="lbl_sum_Now_currently" Grid.Row="3"  Grid.Column="2"  FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="#FF8D0A">94500,85</Label>
+
+        <Label x:Name="lblSum_Cash" Margin="20,9.8,0,9.8" Content="Сумма наличными:" Grid.Column="0"  Grid.Row="4" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White"  />
+        <TextBox x:Name="sum_cash"  Margin="21,12.8,298.4,12.8" Grid.Row="4" Grid.Column="1" Background="White"  VerticalAlignment="Center" FontSize="12" Height="24" Grid.ColumnSpan="2" >
+        </TextBox>
+        <Label x:Name="lblAvtoChange" Margin="20.6,9.8,0,9.8" Content="Сдача:" Grid.Column="2"  Grid.Row="4" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White" />
+        <Label  x:Name="lbl_change_Now_currently" Grid.Row="4"  Grid.Column="2"  FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="Red">456,85</Label>
+
+
+        <Button x:Name="Calculate_button" Grid.Row="5"  Grid.Column="2" VerticalAlignment="Bottom" FontSize="18" HorizontalAlignment="Right" Margin="0,0,0,0"  Content="Вычеслить"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="White"/>
+
+        <Button x:Name="Receipt_button" Grid.Row="6"  Grid.Column="2" VerticalAlignment="Bottom" FontSize="18" HorizontalAlignment="Right" Margin="0,0,0,0"  Content="Оформить чек"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FF8D0A"/>
+
     </Grid>
 
 </Window>
