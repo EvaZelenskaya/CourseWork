@@ -14,10 +14,10 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" Foreground="#FF8D0A" />
-                <TextBox materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FFB48F" FontSize="16" BorderBrush="#F5E6CC" />
-                <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" CaretBrush="#FFB48F" FontSize="16" BorderBrush="#F5E6CC" />
+                <TextBox x:Name="loginField" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FFB48F" FontSize="16" BorderBrush="#F5E6CC" />
+                <PasswordBox x:Name="passField" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" CaretBrush="#FFB48F" FontSize="16" BorderBrush="#F5E6CC" />
                 <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Stretch" Margin="0 20" Content="Войти" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FF8D0A" FontSize="18"></Button>
+                    <Button x:Name="button_login" HorizontalAlignment="Stretch" Margin="0 20" Content="Войти" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FF8D0A" FontSize="18" Click="button_login_Click"></Button>
                 </Grid>
 
             </StackPanel>

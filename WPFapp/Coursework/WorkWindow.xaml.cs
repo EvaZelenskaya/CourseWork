@@ -35,7 +35,7 @@ namespace Coursework
             timer.Tick += timer_Tick;
             timer.Start();
             lblDate.Content = DateTime.Today.ToShortDateString();
-            comBox_Currency.SelectionChanged += comBox_Currency_SelectedIndexChanged; 
+           // бред comBox_Currency.SelectionChanged += comBox_Currency_SelectedIndexChanged; 
             //pop += comBox_Currency_SelectedIndexChanged;
             /* if (comBox_Currency.SelectedItem == comBox_Currency.Items[0]) 
             { 
@@ -88,7 +88,7 @@ namespace Coursework
             lblTime.Content = DateTime.Now.ToLongTimeString();
             
         }
-        private void comBox_Currency_SelectedIndexChanged(object sender, EventArgs e)
+      /*  private void comBox_Currency_SelectedIndexChanged(object sender, EventArgs e)
         {
            
             switch (comBox_Currency.SelectedItem.ToString())
@@ -136,6 +136,6 @@ namespace Coursework
 
         }
 
-        }
+        }*/
     }
 }

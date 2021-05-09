@@ -32,7 +32,7 @@
 
 
         <Label x:Name="lblCurrency" Margin="20,10,0,10.4" Content="Валюта:" Grid.Column="0"  Grid.Row="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="White"  />
-        <ComboBox x:Name="comBox_Currency"  Margin="21,14,299.4,13.4" Grid.Row="1" Grid.Column="1" Background="White"  VerticalAlignment="Center" FontSize="12" Height="23" Grid.ColumnSpan="2" SelectionChanged="comBox_Currency_SelectionChanged" >
+        <ComboBox x:Name="comBox_Currency"  Margin="21,14,299.4,13.4" Grid.Row="1" Grid.Column="1" Background="White"  VerticalAlignment="Center" FontSize="12" Height="23" Grid.ColumnSpan="2"  >
             <ComboBoxItem>Доллар США $</ComboBoxItem>
             <ComboBoxItem>Евро €</ComboBoxItem>
             <ComboBoxItem >Белорусский рубль Br</ComboBoxItem>
