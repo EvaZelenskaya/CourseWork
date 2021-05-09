@@ -35,38 +35,35 @@ namespace Coursework
             timer.Tick += timer_Tick;
             timer.Start();
             lblDate.Content = DateTime.Today.ToShortDateString();
-            
-            lbl_buy_Now_currently.Content= GetUSDRate();
-            sum_cash.Text= Msk_Bank();
+            comBox_Currency.SelectionChanged += comBox_Currency_SelectedIndexChanged; 
+            //pop += comBox_Currency_SelectedIndexChanged;
+            /* if (comBox_Currency.SelectedItem == comBox_Currency.Items[0]) 
+            { 
+            lbl_buy_Now_currently.Content = fora_Bank_buy_USD();
+            lbl_sell_Now_currently.Content = fora_Bank_sell_USD();
+            }*/
 
-            
+
         }
 
-        private String Msk_Bank()
+        
+
+        private String fora_Bank_sell_USD()
         {
             WebClient wc = new WebClient();
-            String Responte = wc.DownloadString(@"https://mkb.ru");
-            String Rate = Regex.Match(Responte, @"<td class='data al_right'>([0-9]+\.[0-9]+)</td>").Groups[1].Value;
+            String Responte = wc.DownloadString("https://www.banki.ru/products/currency/exchange/11442/");
+            String Rate = Regex.Match(Responte, @"data-currencies-rate-sell=""([0-9]+\.[0-9]+)""").Groups[1].Value;
             return Rate;
         }
-        public static String FindText(string source, string prefix, string suffix)
+        private String fora_Bank_buy_USD()
         {
-            var prefixPosition = source.IndexOf(prefix, StringComparison.OrdinalIgnoreCase);
-            var suffixPosition = source.IndexOf(suffix, prefixPosition + prefix.Length, StringComparison.OrdinalIgnoreCase);
-
-            if ((prefixPosition >= 0) && (suffixPosition >= 0) && (suffixPosition > prefixPosition) && ((prefixPosition + prefix.Length) <= suffixPosition))
-            {
-                return source.Substring(
-                                prefixPosition + prefix.Length,
-                                suffixPosition - prefixPosition - prefix.Length
-                    );
-            }
-            else
-            {
-                return String.Empty;
-            }
+            WebClient wc = new WebClient();
+            String Responte = wc.DownloadString("https://www.banki.ru/products/currency/exchange/11442/");
+            String Rate = Regex.Match(Responte, @"data-currencies-rate-buy=""([0-9]+\.[0-9]+)""").Groups[1].Value;
+            return Rate;
         }
-        private String GetUSDRate()
+        //ЦБ онлайн
+        /*private String GetUSDRate()
         {
             string url = "http://www.cbr.ru/scripts/XML_daily.asp";
             //XmlDocument xml_doc = new XmlDocument();
@@ -82,7 +79,7 @@ namespace Coursework
                 }
             }
             return "";
-        }
+        }*/
        
         
 
@@ -90,6 +87,55 @@ namespace Coursework
         {
             lblTime.Content = DateTime.Now.ToLongTimeString();
             
+        }
+        private void comBox_Currency_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            switch (comBox_Currency.SelectedItem.ToString())
+             {
+
+                 case "Доллар США $":
+                     {
+                         lbl_buy_Now_currently.Content = fora_Bank_buy_USD();
+                         lbl_sell_Now_currently.Content = fora_Bank_sell_USD();
+                     }
+                    break;
+                 case "Евро €":
+                     {
+                         lbl_buy_Now_currently.Content = "0";
+                         lbl_sell_Now_currently.Content = "0";
+                     }
+                    break;
+                 case "Белорусский рубль Br":
+                     {
+                         lbl_buy_Now_currently.Content = "1";
+                         lbl_sell_Now_currently.Content = "1";
+                     }
+                    break;
+                 case "Украинская гривна ₴":
+                     {
+                         lbl_buy_Now_currently.Content = "2";
+                         lbl_sell_Now_currently.Content = "2";
+                     }
+                   break;
+                 case "Фунт стерлингов £":
+                     {
+
+                         lbl_buy_Now_currently.Content = "3";
+                         lbl_sell_Now_currently.Content = "3";
+                     }
+                   break;
+                 case "Российский рубль ₽":
+                     {
+                         lbl_buy_Now_currently.Content = "4";
+                         lbl_sell_Now_currently.Content = "4";
+                     }
+                   break;
+
+
+
+        }
+
         }
     }
 }
