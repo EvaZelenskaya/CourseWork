@@ -36,9 +36,12 @@ namespace Coursework
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-           MySqlCommand command = new MySqlCommand("SELECT * FROM учёт_обмена_валют.staff WHERE  `login_Staff `= @uL AND  `password_Staff `= @uP", db.getConnection());
-       //    MySqlCommand command = new MySqlCommand("SELECT * FROM staff WHERE  `login_Staff `=@uL AND  `password_Staff `=@uP", db.getConnection());
+            //MySqlCommand command = new MySqlCommand();
+            //var query = $"SELECT id_Object, Name_works FROM a_stroy.words_object where id_Object = {box.SelectedValue}";
+          
+          // MySqlCommand command = new MySqlCommand(($"SELECT * FROM учёт_обмена_валют.staff where `login_Staff `= {loginUser} AND  `password_Staff `= { passUser}"), db.getConnection());
+           
+         MySqlCommand command = new MySqlCommand("SELECT * FROM staff WHERE  `login_Staff` =@uL AND  `password_Staff`  =@uP", db.getConnection());
           // MySqlCommand command = new MySqlCommand("SELECT * FROM `staff` WHERE  `login_Staff `=@uL AND  `password_Staff `=@uP", db.getConnection());
           //  MySqlCommand command = new MySqlCommand("SELECT * FROM `staff` WHERE  `login_Staff ` = loginUser" '  AND  `password_Staff `=' "passUser"' );
 ;       command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser; 
@@ -46,6 +49,11 @@ namespace Coursework
 
             adapter.SelectCommand = command;
             adapter.Fill(table); // поместили внутрь объекты
+
+            for (int i =0; i<3; i++)
+            {
+                //table.Rows
+            }
 
             if (table.Rows.Count > 0) // сколько записей
                 MessageBox.Show("Yes");
